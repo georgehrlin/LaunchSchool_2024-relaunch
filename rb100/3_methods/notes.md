@@ -35,3 +35,122 @@ Use the `return` keyword to return a value explicitly. Once the first `return` i
 
 ## Chaining Methods
 Because every method call returns something, method calls can be chained to be succinct and expressive. However, make sure every part of the chain returns the desired value and not `nil` nor raises an error.
+
+## Method Calls as Arguments
+Ruby allows passing method calls as arguments to other methods.
+```ruby
+def add(a, b)
+  a + b
+end
+
+def subtract(a, b)
+  a - b
+end
+
+def multiply(a, b)
+  a * b
+end
+
+multiply(add(20, 45), subtract(80, 10)) # => 4550
+```
+
+## The Call Stack (a.k.a The Stack)
+The call stack helps Ruby keep track of what method is executing as well as where execution should resume when the method returns.
+
+(In Ruby, methods are not the only thing that uses the call stack. Blocks, procs, and lambdas also use the call stack; in fact, they all use the same call stack as Ruby uses for methods.)
+
+The call stack has a limited size that varies based on the Ruby implementation, although it is usually sufficient for more than 10,000 stack entries. When the stack runs out of run, a `SystemStackError` will be raised.
+
+```ruby
+# Example Program
+def first
+  puts "I'm the first method."
+end
+
+def second
+  first
+  puts "I'm the second method."
+end
+
+second
+```
+
+**Call Stack**
+\-
+\-
+\-
+main
+
+*When the example program starts running, the call stack initially has one item, a **stack frame**. The stack frame represents the global (top-level) portion of the program. It is sometimes called the `main` method. Ruby uses `main` to keep track of what part of the main program it is currently working on.*
+
+**Call Stack**
+\-
+\-
+second
+main: line 10
+
+*When program execution reaches the method invocation of `second` on line 10, it first updates the `main` stack frame with the current program location. This is so Ruby knows which location to resume to when `second` finishes running. Then Ruby creates a new stack frame for the `second` method and it is **pushed** onto the stack. With the `main` frame now stuck beneath the `second` frame, the `main` method becomes dormant and the `second` method becomes active.*
+
+**Call Stack**
+\-
+first
+second: line 6
+main: line 10
+
+*When program execution reaches the method invocation of `first` on line 6 by `second`, the `second` frame is updated with the current program location. Then, a new stack frame of `first` is pushed onto the stack.*
+
+**Call Stack**
+puts
+first: line 2
+second: line 6
+main: line 10
+
+*`first` calls `puts` on line 2, so this location is updated on the `first` frame and a new stack frame of `puts` is pushed on top of the stack. Note: All Ruby methods, including the built-in ones like `puts`, share the same call stack.*
+
+**Call Stack**
+\-
+first: line 2
+second: line 6
+main: line 10
+
+*Assuming that `puts` is the only method called (though in reality it's likely that it has several internal calls), it outputs `"I'm the first method."` and returns `nil`. As soon as `puts` returns a value, the top frame—the `puts` stack frame—is **popped** from the call stack, exposing the previous stack frame and revealing the location line 2 which program execution now resumes to.*
+
+**Call Stack**
+\-
+\-
+second: line 6
+main: line 10
+
+*Line 2 is the only line of code within `first`'s method definition. As `first` concludes execution and returns, the `first` stack frame is popped from the call stack. Now the previous, `second` stack frame is exposed and program execution resumes on line 6.*
+
+**Call Stack**
+\-
+puts
+second: line 7
+main: line 10
+
+*After line 6, program execution moves onto line 7. `puts` is called on line 7, so the location of the `second` frame is updated with line 7, and a new `puts` frame is pushed on top.*
+
+**Call Stack**
+\-
+\-
+second: line 7
+main: line 10
+
+*`puts` finishes execution and returns, so the `puts` frame is popped. Program execution now resumes on line 7.*
+
+**Call Stack**
+\-
+\-
+\-
+main: line 10
+
+*Line 7 is the last line of code of `second`, so `second` finishes execution and its stack frame is popped. Program execution now resumes on line 10.*
+
+**Call Stack**
+\-
+\-
+\-
+\-
+
+*Line 10 is the last line of code of this program. `main` has no more code to run. When this happens, the `main` frame is popped and the program ends.*
