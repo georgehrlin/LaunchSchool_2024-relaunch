@@ -22,8 +22,8 @@ A method definition creates its own scope outside the flow of execution. This is
 
 ## `obj.method` vs. `method(obj)`
 `obj.method` and `method(obj)` are two ways to call methods.
-The `method(obj)` format is for passing an argument to a method call.
-The `obj.method` format includes the explicit caller, which is the object on which the method is being called, like `a_caller.some_method(obj)`; one way to see it (for now) is `some_method` is modifying `a_caller`.
+- The `method(obj)` format is for passing an argument to a method call.
+- The `obj.method` format includes the explicit caller, which is the object on which the method is being called, like `a_caller.some_method(obj)`; one way to see it (for now) is `some_method` is modifying `a_caller`.
 
 ## Mutating Arguments
 While the self-contained scope nature of method definitions prevent the access (and hence reassignment) of local variables that are initialized outside of the method definitions, a method can still easily be mutating on the argument that is passed to it as argument.

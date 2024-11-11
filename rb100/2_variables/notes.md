@@ -52,8 +52,7 @@ end
 puts a # Outputs 9
 puts b # Raises a NameError because b is not available outside of the block
 ```
-Be careful: Not all `do..end` pairs imply a block; in particular, a `do..end` on a `for` or `while` loop is not a block.
-Once again, a block is only a block if it follows a method invocation.
+Be careful: Not all `do..end` pairs imply a block; in particular, a `do..end` on a `for` or `while` loop is not a block. Once again, a block is only a block if it follows a method invocation.
 
 ## Types of Variables
 There are five types of variables:
