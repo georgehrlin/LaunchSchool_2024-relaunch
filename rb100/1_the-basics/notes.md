@@ -139,6 +139,6 @@ A value can be accessed by its specific key.
 An expression is anything that can be evaluated. Pretty much anything you write in Ruby is an expression.
 An expression always returns something, even if that's an error message or `nil`.
 
-## `puts` vs. return
-When `puts` is called by us, we are asking Ruby to print something to the screen. However, `puts` does not return what is printed.
+## `#puts` vs. return
+When `#puts` is called by us, we are asking Ruby to print something to the screen. However, `#puts` does not return what is printed.
 Expressions do something, but they also return something. What is returned is not always what is done.

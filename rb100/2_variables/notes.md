@@ -18,7 +18,7 @@ Variables point to values in memory and are not deeply linnked to each other:
 => 4
 ```
 
-## Getting Data from a User
+## Getting Data from a User with `#gets`
 `#gets` is the "get string" method. When called, it allows a program to wait for the user to type in information, press the enter key, and returns the value entered by the user as a string with `\n` (the newline character) attached to its end.
 To get rid of the `\n`, `#chomp` is often called on the return value.
 ```shell
@@ -40,7 +40,7 @@ Methods have self-contained scope, which means that only variables initialized w
 
 ### Variable Scope and Blocks
 A block is a piece of code that follows a method's invocation, delimited by either curly braces `{}` or `do/end`.
-With blocks, within the inner scope of a block variables initialized in an outer scope can be accessed, but not vice versa.
+With blocks, from within the inner scope of a block variables initialized in an outer scope can be accessed, but not vice versa.
 ```ruby
 a = 1
 
