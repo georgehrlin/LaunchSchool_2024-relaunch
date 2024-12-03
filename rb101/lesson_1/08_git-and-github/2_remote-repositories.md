@@ -35,3 +35,13 @@ This is because we usually want to compare a modified local repo to the original
 ```
 % git pull --ff-only
 ```
+`--ff-only` is an option passed to the command, which tells Git exactly how to combine the remote changes with our local branch. In this case, Git uses a **fast-forward** merge to combine the changes—it moves the history of the local branch forwards to match the history fetched from the remote branch. `-only` speicifies that if Git cannot combine the changes with a fast-forward merge then it should abort the change.
+
+## `git clone`
+`git clone` is used to pull down all the contents of a remote repo. It makes an exact clone of an existing remote repo and copies it onto your local machine. The cloned local repo will include all the files, commit history, branches, and everything else associated to that repo.
+```
+% git clone <remote repo URL> <local directory name>
+% git clone https://github.com/georgehrlin/LaunchSchool_RB110.git rb110
+```
+Specify a second parameter (`rb100` in the example above) to name the local repo. Without it, the local directory will be named the same as the remote repo.
+By doing this, a remote is automatically added to the local repo's configuration, pointing to the remote repo URL, aliased as `origin`.
