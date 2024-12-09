@@ -29,7 +29,7 @@ Formal Pseudo-Code
 
 START
 
-Given a string, str, and an argument single-letter string, l.
+# Given a string, str, and an argument single-letter string, l.
 
 SET i = 0
 SET counter = 0
