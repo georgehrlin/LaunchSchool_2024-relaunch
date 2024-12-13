@@ -1,0 +1,36 @@
+
+en:
+  welcome: "Welcome to calculator! Enter your name:"
+  valid_name: "Make sure to enter a valid name."
+  hi: "Hi! %{name}!"
+  first_number: "What is the first number?"
+  second_number: "What is the second number?"
+  invalid_number: "Hmm... That doesn't look like a valid number."
+  operator_prompt: |
+    What operation would you like to perform?
+      1) Add
+      2) Subtract
+      3) Multiply
+      4) Divide
+  calculating: "%{operation} the two numbers..."
+  display_result: "The result is %{result}."
+  another_calculation: "Do you want to perform another calculation? (Y to calculate again)"
+  good_bye: "Thank you for using this calculator. Good bye!"
+
+ch:
+  welcome: "欢迎！请输入用户名："
+  valid_name: "请输入有效用户名。"
+  hi: "您好，%{name}！"
+  first_number: "请输入第一个数字："
+  second_number: "请输入第二个数字："
+  invalid_number: "请输入有效数字。"
+  operator_prompt: |
+    请选择运算：
+       1)加
+       2)减
+       3)乘
+       4)除
+  calculating: "数字相%{operation}中…"
+  display_result: "运算结果是：%{result}。"
+  another_calculation: "需要进行额外的运算吗？如果是，请输入 Y。"
+  good_bye: "感谢您使用本软件！再见。"
