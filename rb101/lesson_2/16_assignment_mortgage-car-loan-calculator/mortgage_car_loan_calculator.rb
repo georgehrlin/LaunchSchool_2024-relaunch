@@ -114,8 +114,6 @@ loop do # main loop
                       loan_duration_month.to_i
                       )
 
-  # binding.pry
-
   prompt(
     format(
       messages('monthly_payment'),
@@ -126,7 +124,7 @@ loop do # main loop
       )
       )
 
-  prompt(messages('again'))
+  prompt(messages('run_again'))
 
   again = gets.chomp.downcase
 
