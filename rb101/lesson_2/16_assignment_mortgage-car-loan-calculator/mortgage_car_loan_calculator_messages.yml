@@ -1,0 +1,24 @@
+en:
+  welcome: 'Welcome to mortgage/car loan calculator. What is your name?'
+  invalid_username: 'Please enter a non-empty name. Anything will do!'
+  greeting_personal: "Hi %{username}! Let's get started."
+  ask_loan_amount: 'What is the loan amount?'
+  valid_loan_amount: 'Your loan amount is: $%{loan_amount}.'
+  invalid_loan_amount: 'The loan amount must be a positive number.'
+  ask_apr: 'What is the annual percentage rate (APR) in percentage?'
+  valid_apr: 'Your annual percent rate (APR) is: %{apr_percent} percent.'
+  invalid_apr: 'The APR (in percentage) must be a positive numebr and less than 100.'
+  display_mir: 'Based on your APR of %{apr_percent} percent, your monthly 
+  interest rate is: %{mir} percent.'
+  ask_loan_duration: 'What is the loan duration in years?'
+  display_loan_duration: 'Based on your loan duartion of %{loan_duration_year} 
+  years, your loan duration in months is %{loan_duration_month} months.'
+  invalid_loan_duration: 'The loan duration in years must be a positive integer!'
+  monthly_payment: 'Based on your loan amount of $%{loan_amount}, annual 
+  percentage rate of %{apr_percent} percent, and loan duration of 
+  %{loan_duration_year} years, your monthly payment is $%{monthly_payment}.'
+  again: 'Would you like to do another calculation? (Enter Y if yes.)'
+  farewell: 'Thank you for using this calculator. Take care!'
+
+ch_s:
+  

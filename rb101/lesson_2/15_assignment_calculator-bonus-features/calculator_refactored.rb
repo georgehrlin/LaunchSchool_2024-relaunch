@@ -30,31 +30,28 @@ def operation_to_message(op)
         when '2'
           'subtracting'
         when '3'
-          'sultiplying'
+          'multiplying'
         when '4'
-          'sividing'
+          'dividing'
         end
 
-  return "I'm #{msg}"
+  "I'm #{msg}"
 end
 
-
 prompt(messages("welcome"))
-
-# binding.pry
 
 name = ''
 loop do
   name = Kernel.gets().chomp()
 
   if name.empty?()
-    prompt(messages("valid_name"))
+    prompt(messages("invalid_name"))
   else
     break
   end
 end
 
-prompt(messages("hi") % {name: name})
+prompt(format((messages("hi")), name: name))
 
 loop do # main loop
   number1 = nil
@@ -106,7 +103,12 @@ What operation would you like to perform?
     end
   end
 
-  prompt(messages("calculating") % {operation: operation_to_message(operator)})
+  prompt(
+    format(
+      messages("calculating"),
+      operation: operation_to_message(operator)
+    )
+  )
 
   result = case operator
            when '1'
@@ -119,7 +121,7 @@ What operation would you like to perform?
              number1.to_f() / number2.to_f()
            end
 
-  prompt(messages("display_result") % {result: result})
+  prompt(format(messages("display_result"), result: result))
 
   prompt(messages("another_calculation"))
   answer = Kernel.gets().chomp()

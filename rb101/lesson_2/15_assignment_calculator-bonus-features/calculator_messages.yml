@@ -1,7 +1,7 @@
 
 en:
   welcome: "Welcome to calculator! Enter your name:"
-  valid_name: "Make sure to enter a valid name."
+  invalid_name: "Make sure to enter a valid name."
   hi: "Hi! %{name}!"
   first_number: "What is the first number?"
   second_number: "What is the second number?"
@@ -12,7 +12,7 @@ en:
       2) Subtract
       3) Multiply
       4) Divide
-  calculating: "%{operation} the two numbers..."
+  calculating: "%{operation}ing the two numbers..."
   display_result: "The result is %{result}."
   another_calculation: "Do you want to perform another calculation? (Y to calculate again)"
   good_bye: "Thank you for using this calculator. Good bye!"
