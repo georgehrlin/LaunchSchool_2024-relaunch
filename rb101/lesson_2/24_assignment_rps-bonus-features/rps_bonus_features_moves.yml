@@ -1,0 +1,13 @@
+shorthands: {
+  r: 'rock',
+  p: 'paper',
+  sc: 'scissors',
+  l: 'lizard',
+  sp: 'spock'}
+it_beats_these : {
+  scissors: ['paper', 'lizard'],
+  paper: ['rock', 'spock'],
+  rock: ['lizard', 'scissors'],
+  lizard: ['spock', 'paper'],
+  spock: ['scissors', 'rock']
+}

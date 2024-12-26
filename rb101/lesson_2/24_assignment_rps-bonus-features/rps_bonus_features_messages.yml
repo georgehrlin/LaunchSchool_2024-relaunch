@@ -1,0 +1,31 @@
+welcome: 'Welcome to Rock-Paper-Scissors-Lizard-Spock!'
+rules_game: "Here's how the game works:\n
+\  Scissors cut paper\n
+\  Paper covers rock\n
+\  Rock crushes lizard\n
+\  Lizard poisons Spock\n
+\  Spock smashes scissors\n
+\  Scissors decapitate lizard\n
+\  Lizard eats paper\n
+\  Paper disproves Spock\n
+\  Spock vaporizes rock\n
+\  Rock breaks scissors"
+rules_grand_winner: 'It takes three wins to be the GRAND WINNER!'
+here_we_go: 'Are you ready? Here we go!'
+display_round_number: "Round: %i"
+display_scores: "Player: %i : Computer: %i"
+ask_player_move: 'Make your move:'
+available_shorthands: '(First-letter shorthands are available. Use sc for scissors and sp for spock!)'
+invalid_move: 'Your input is invalid!'
+ask_for_rules: 'Would you like to check the rules again? (Enter y for yes.)'
+continue: 'Press ENTER when you are ready to continue.'
+display_moves: "You chose %s! Computer chose %s!"
+round_winner_player: 'You won this round!'
+round_winner_computer: 'Computer won this round!'
+round_tie: "It's a tie!"
+starting_next_round: 'Starting next round...'
+we_have_a_winner: 'We have a winner...'
+grand_winner_player: 'You are the GRAND WINNNER! YAY!'
+grand_winner_computer: 'Computer is the GRAND WINNER!'
+play_again: 'Would you like to play again? (Enter y for yes.)'
+thank_you: 'Thank you for playing! Bye bye!'
