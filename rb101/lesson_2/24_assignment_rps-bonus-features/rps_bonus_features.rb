@@ -5,6 +5,7 @@ GAME_TEXT = YAML.load_file('rps_bonus_features_messages.yml')
 GAME_MOVES = YAML.load_file('rps_bonus_features_moves.yml')
 MOVES = GAME_MOVES['it_beats_these'].keys
 SHORTHANDS = GAME_MOVES['shorthands'].keys
+ROUNDS_TO_WIN = 3
 
 def clear_screen
   system('clear')
@@ -82,7 +83,7 @@ def display_round_result(player_move, computer_move)
 end
 
 def round_transition(win_counter_player, win_counter_computer)
-  if win_counter_player != 3 && win_counter_computer != 3
+  if win_counter_player != ROUNDS_TO_WIN && win_counter_computer != ROUNDS_TO_WIN
     prompt_game_text('starting_next_round')
     sleep(2)
   else
@@ -100,11 +101,11 @@ def round_end(player_move, computer_move)
 end
 
 def grand_winner?(win_counter1, win_counter2)
-  win_counter1 == 3 || win_counter2 == 3
+  win_counter1 == ROUNDS_TO_WIN || win_counter2 == ROUNDS_TO_WIN
 end
 
 def display_grand_winner(win_counter_player)
-  if win_counter_player == 3
+  if win_counter_player == ROUNDS_TO_WIN
     prompt_game_text('grand_winner_player')
   else
     prompt_game_text('grand_winner_computer')
